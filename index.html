@@ -12,123 +12,56 @@
             --accent: #2ecc71;
         }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--primary);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-
-        header {
-            background: white;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-bottom: 3px solid var(--secondary);
-        }
-
-        header h1 { margin: 0; font-size: 1.8rem; }
-        header p { margin: 5px 0 0; color: var(--secondary); font-weight: bold; }
-
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: -20px auto 2rem;
-            padding: 0 15px;
-        }
-
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        /* Style de la Galerie - BIEN RANGÉE */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 1rem;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        /* Boutons de contact */
-        .contact-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 1.5rem 0;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 15px 5px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .btn-fixe { background: var(--secondary); }
-        .btn-mobile { background: var(--accent); }
-
-        .map-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
-
-        footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.8rem; }
-
-      /* --- CODE SPECIAL TELEPHONE POUR LA GRILLE --- */
-@media screen and (max-width: 768px) {
-    /* On force la grille à 2 colonnes sur téléphone */
-    .gallery {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* EXACTEMENT 2 COLONNES */
-        gap: 10px !important; /* Espace réduit entre les photos */
-        padding: 10px !important;
+       <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
     }
 
-    /* On s'assure que les photos ne se déforment pas */
-    .gallery img {
-        width: 100% !important;
-        height: 150px !important; /* Hauteur fixe pour que toutes les photos fassent la même taille */
-        object-fit: cover !important; /* Coupe l'image proprement si elle n'est pas au bon format */
-        margin-bottom: 0 !important;
-        border-radius: 8px;
-    }
-
-    /* Ajustement du container pour gagner de la place */
     .container {
-        width: 98% !important;
-        padding: 5px !important;
+        max-width: 1000px;
+        margin: 20px auto;
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-}
+
+    /* LA GRILLE : Elle s'adapte toute seule */
+    .gallery {
+        display: grid;
+        /* Sur PC : 4 colonnes | Sur Mobile : 2 colonnes */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 150px; /* Garde toutes les photos à la même hauteur */
+        object-fit: cover; /* Coupe proprement pour que ça soit aligné */
+        border-radius: 8px;
+        display: block;
+    }
+
+    h1, h3 {
+        text-align: center;
+        color: #333;
+    }
+
+    /* PETITE CORRECTION POUR MOBILE */
+    @media screen and (max-width: 600px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr) !important; /* Force 2 colonnes sur mobile */
+        }
+        .container {
+            margin: 5px;
+            padding: 10px;
+        }
+    }
+</style>
     </style>
 </head>
 <body>
@@ -188,6 +121,7 @@
 
 </body>
 </html>
+
 
 
 
