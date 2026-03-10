@@ -15,31 +15,36 @@
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
+            padding: 0;
             color: var(--primary);
             background-color: var(--light);
+            line-height: 1.6;
         }
 
         header {
             background: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             border-bottom: 3px solid var(--secondary);
         }
 
+        header h1 { margin: 0; font-size: 1.8rem; }
+        header p { margin: 5px 0 0; color: var(--secondary); font-weight: bold; }
+
         .hero {
             background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), 
-                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000'); /* Image de fond */
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .container {
             max-width: 1000px;
-            margin: -30px auto 2rem;
-            padding: 0 20px;
+            margin: -20px auto 2rem;
+            padding: 0 15px;
         }
 
         .card {
@@ -50,7 +55,7 @@
             margin-bottom: 20px;
         }
 
-        /* Style de la Galerie */
+        /* Style de la Galerie - BIEN RANGÉE */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -60,30 +65,31 @@
 
         .gallery img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
-        .gallery img:hover { transform: scale(1.05); }
-
+        /* Boutons de contact */
         .contact-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 2rem 0;
+            gap: 10px;
+            margin: 1.5rem 0;
         }
 
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
-            padding: 18px;
+            padding: 15px 5px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
+            font-size: 0.9rem;
         }
 
         .btn-fixe { background: var(--secondary); }
@@ -93,22 +99,36 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
 
-        footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.9rem; }
+        footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.8rem; }
 
+        /* AJUSTEMENTS POUR TÉLÉPHONE (MOBILE) */
         @media (max-width: 600px) {
-  .gallery {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  .gallery img {
-    width: 100% !important;
-    height: auto !important;
-    margin-bottom: 10px;
-  }
-}
+            header h1 { font-size: 1.5rem; }
+            
+            .hero { padding: 2rem 1rem; }
+            .hero h2 { font-size: 1.3rem; }
+
+            .gallery {
+                grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+            }
+
+            .gallery img {
+                height: auto; /* Garde les proportions */
+                max-height: 300px;
+            }
+
+            .contact-buttons {
+                grid-template-columns: 1fr; /* Boutons l'un sur l'autre sur mobile */
+            }
+
+            .btn {
+                padding: 20px;
+                font-size: 1.1rem; /* Plus gros pour le pouce */
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,26 +139,26 @@
 </header>
 
 <section class="hero">
-    <h2>Bienvenue au Cabinet Lahraouine </h2>
+    <h2>Bienvenue au Cabinet Lahraouine</h2>
     <p>Votre santé est entre de bonnes mains.</p>
 </section>
 
 <div class="container">
     <div class="card">
         <h3>📸 Galerie du Cabinet</h3>
-       <div class="gallery">
-    <img src="cabinet1.jpg" alt="Entrée du cabinet">
-    <img src="cabinet2.jpg" alt="Salle d'attente">
-    <img src="cabinet3.jpg" alt="Bureau médical">
-    <img src="cabinet4.jpg" alt="Détails cabinet">
-    <img src="cabinet5.jpg">
-    <img src="cabinet6.jpg">
-    <img src="cabinet7.jpg">
-    <img src="cabinet8.jpg">
-</div>
+        <div class="gallery">
+            <img src="cabinet1.jpg" alt="Entrée du cabinet">
+            <img src="cabinet2.jpg" alt="Salle d'attente">
+            <img src="cabinet3.jpg" alt="Bureau médical">
+            <img src="cabinet4.jpg" alt="Détails cabinet">
+            <img src="cabinet5.jpg" alt="Cabinet 5">
+            <img src="cabinet6.jpg" alt="Cabinet 6">
+            <img src="cabinet7.jpg" alt="Cabinet 7">
+            <img src="cabinet8.jpg" alt="Cabinet 8">
+        </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         <div class="card">
             <h3>📍 Localisation</h3>
             <p>Numéro F1146, Rue 9<br>Lotissement Lahraouine<br>Casablanca 20400</p>
@@ -156,7 +176,7 @@
 
     <div class="map-container">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.215570024227!2d-7.5303289!3d33.547734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda6352a0e0e4c47%3A0xe17fe3254529b7a0!2sCabinet%20Boutarfas%20Ibtisam!5e0!3m2!1sfr!2sma!4v1710000000000" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.9463286461!2d-7.5312345!3d33.5547654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDMzJzE3LjIiTiA3wrAzMSc1Mi40Ilc!5e0!3m2!1sfr!2sma!4v1646900000000!5m2!1sfr!2sma" 
             width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </div>
@@ -168,4 +188,5 @@
 
 </body>
 </html>
+
 
