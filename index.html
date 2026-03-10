@@ -104,31 +104,31 @@
 
         footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.8rem; }
 
-        /* AJUSTEMENTS POUR TÉLÉPHONE (MOBILE) */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-            
-            .hero { padding: 2rem 1rem; }
-            .hero h2 { font-size: 1.3rem; }
+      /* --- CODE SPECIAL TELEPHONE POUR LA GRILLE --- */
+@media screen and (max-width: 768px) {
+    /* On force la grille à 2 colonnes sur téléphone */
+    .gallery {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* EXACTEMENT 2 COLONNES */
+        gap: 10px !important; /* Espace réduit entre les photos */
+        padding: 10px !important;
+    }
 
-            .gallery {
-                grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-            }
+    /* On s'assure que les photos ne se déforment pas */
+    .gallery img {
+        width: 100% !important;
+        height: 150px !important; /* Hauteur fixe pour que toutes les photos fassent la même taille */
+        object-fit: cover !important; /* Coupe l'image proprement si elle n'est pas au bon format */
+        margin-bottom: 0 !important;
+        border-radius: 8px;
+    }
 
-            .gallery img {
-                height: auto; /* Garde les proportions */
-                max-height: 300px;
-            }
-
-            .contact-buttons {
-                grid-template-columns: 1fr; /* Boutons l'un sur l'autre sur mobile */
-            }
-
-            .btn {
-                padding: 20px;
-                font-size: 1.1rem; /* Plus gros pour le pouce */
-            }
-        }
+    /* Ajustement du container pour gagner de la place */
+    .container {
+        width: 98% !important;
+        padding: 5px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -188,5 +188,6 @@
 
 </body>
 </html>
+
 
 
