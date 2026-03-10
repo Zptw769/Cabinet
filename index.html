@@ -97,7 +97,18 @@
 
         footer { text-align: center; padding: 2rem; color: #7f8c8d; font-size: 0.9rem; }
 
-        @media (max-width: 600px) { .contact-buttons { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) {
+  .gallery {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .gallery img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 10px;
+  }
+}
     </style>
 </head>
 <body>
@@ -157,3 +168,4 @@
 
 </body>
 </html>
+
